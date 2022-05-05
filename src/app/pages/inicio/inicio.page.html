@@ -1,0 +1,24 @@
+<ion-card>
+  <img src="/assets/foto.jpg" />
+</ion-card>
+<ion-content>
+  <section class="botones">
+    <ion-button routerLink="/categories" class="letra" strong="true" shape="round" expand="block">HAZ TU PEDIDO
+    </ion-button>
+    <ion-button class="letra" strong="true" shape="round" expand="block" routerDirection="/categories/categories.page">
+      REGISTRATE</ion-button>
+  </section>
+  <ion-button routerLink="/localizacion" class="letra" strong="true" shape="round" expand="block">LOCALIZACION
+  </ion-button>
+</ion-content>
+<ion-content>
+<swiper [config]="config" 
+(swiper)="onSwiper($event)"
+(slideChange)="onSlideChange()">
+  <ng-template swiperSlide *ngFor="let img of ['cafe', 'cheese','coca-cola','lettuce','onion','tomato']">
+    <ion-card>
+    <img src="/assets/img/products/{{ img }}.png" tappable (click)="openPreview(img)"/>
+  </ion-card>
+</ng-template>
+</swiper>
+</ion-content>

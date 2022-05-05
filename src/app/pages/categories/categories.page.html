@@ -1,0 +1,22 @@
+<!-- Content -->
+<ion-content fullscreen>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor="let c of categories">
+
+                <!-- Card -->
+                <ion-card class="list" (click)="goToProducts(c.id)">
+                    <!-- Imagen -->
+                    <img [src]="c.img">
+                    <ion-card-header>
+                        <!-- Nombre -->
+                        <ion-card-title>{{c.name}}</ion-card-title>
+                    </ion-card-header>
+                </ion-card>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

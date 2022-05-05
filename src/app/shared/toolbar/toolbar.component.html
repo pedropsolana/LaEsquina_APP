@@ -1,0 +1,95 @@
+<!-- Menu -->
+<ion-menu side="end" content-id="content" menu-id="content">
+  <ion-header>
+    <ion-toolbar translucent color="light">
+      <ion-item lines="none">
+        <ion-icon name="arrow-back-outline" *ngIf="showInfoUser || showOrder" (click)="back()"></ion-icon>
+        <ion-title>Menu usuario</ion-title>
+      </ion-item>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ng-container *ngIf="!showInfoUser && !showOrder">
+      <ion-list>
+        <ion-item (click)="authService.isLogged ? logout() : showPanelUser()">
+          <!-- <ion-item *ngIf="authService.isLogged">
+            <ion-label>Hola </ion-label>
+          </ion-item> -->
+          <ion-item>
+            <ion-icon slot="start" name="person-outline"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <ion-label>{{(authService.isLogged ? 'Cerrar Sesión' : 'Iniciar Sesión')}}</ion-label>
+          </ion-item>
+        </ion-item>
+        <ion-item (click)="showPanelOrder()">
+          <ion-item>
+            <ion-icon slot="start" name="cart-outline"></ion-icon>
+            <ion-badge slot="start">{{orderService.numProducts()}}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>Ver pedido</ion-label> 
+          </ion-item>
+        </ion-item>
+        <ion-item *ngIf="authService.isLogged">
+          <ion-item>
+            <ion-icon slot="start" name="fast-food-outline"></ion-icon>
+          </ion-item>
+          <ion-item (click)="goToListOrders()">
+            <ion-label>Ultimos pedidos</ion-label>
+          </ion-item>
+        </ion-item>
+
+      </ion-list>
+    </ng-container>
+    <!-- Panel de usuario -->
+    <ng-container *ngIf="showInfoUser">
+      <!-- Login -->
+      <app-login *ngIf="!showNewAccount" (newAccount)="newAccount()" (back)="back()" (doLogin)="back()">
+      </app-login>
+      <!-- Crear cuenta -->
+      <app-create-account *ngIf="showNewAccount" (back)="showLogin()" (doCreateAccount)="back()">
+      </app-create-account>
+    </ng-container>
+    <!-- Panel de orden -->
+    <ng-container *ngIf="showOrder">
+      <app-list-product-order></app-list-product-order>
+      <ion-button expand="block" (click)="goToPay()">
+        <ion-icon slot="start" name="fast-food-outline"></ion-icon>
+        <ion-text>CONFIRMAR PEDIDO</ion-text>
+      </ion-button>
+    </ng-container>
+
+    <!-- Panel Listado de ordenes-->
+
+
+  </ion-content>
+</ion-menu>
+
+<!-- Header -->
+<ion-header translucent>
+  <ion-toolbar color="dark">
+
+    <!-- Volver atras-->
+    <!-- <ion-buttons slot="start" class="back-button">
+      <ion-icon name="arrow-back-outline" *ngIf="showBackButton()" color="light" (click)="goBack()"></ion-icon>
+    </ion-buttons>  -->
+
+
+    <!-- Carrito -->
+    <ion-icon size="large" slot="start" name="cart-outline" (click)="openMenu()"></ion-icon>
+    <ion-badge slot="start">{{orderService.numProducts()}}</ion-badge>
+
+    <!-- Logo -->
+    <ion-title class="titulo">
+      <img class="logo" src="/assets/img/logo.png" />
+      LA ESQUINA
+    </ion-title>
+
+    <!-- Botón menu -->
+    <ion-buttons slot="end">
+      <ion-menu-button color=light></ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>

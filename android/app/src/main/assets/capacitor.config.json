@@ -1,0 +1,6 @@
+{
+	"appId": "com.laesquina.myapp",
+	"appName": "La_Esquina",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "615139456408",
+    "firebase_url": "https://ionic-laesquina-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ionic-laesquina",
+    "storage_bucket": "ionic-laesquina.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615139456408:android:3fdae1a5128e337ec827ed",
+        "android_client_info": {
+          "package_name": "com.laesquina.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615139456408-692d4t6l2oifkmuj873thn6io1bg33dp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0DkUkCvj3hkiRaH698Fg9UD3OIWl8cRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615139456408-692d4t6l2oifkmuj873thn6io1bg33dp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,93 @@
+<!-- Formulario -->
+<form (ngSubmit)="createAccount()">
+
+  <ion-grid>
+    <ion-row>
+      <!-- Email -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <!-- Password -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="user.password" name="pass"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <!-- Nombre -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Nombre:</ion-label>
+          <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <!-- Apellidos -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Apellidos:</ion-label>
+          <ion-input type="text" [(ngModel)]="user.apellidos" name="apellidos"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <!-- Teléfono -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Teléfono:</ion-label>
+          <ion-input type="text" [(ngModel)]="user.telf" name="telf"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <!-- Dirección -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Dirección</ion-label>
+          <ion-input type="text" [(ngModel)]="user.address" name="address"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <!-- Población -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Población</ion-label>
+          <ion-input type="text" [(ngModel)]="user.poblacion" name="poblacion"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <!-- Crear cuenta -->
+      <ion-col size="12">
+        <ion-button expand="block" type="submit">Crear Cuenta</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <!-- Boton volver -->
+      <ion-col size="12">
+        <ion-button expand="block" type="button" (click)="exit()">Volver</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</form>

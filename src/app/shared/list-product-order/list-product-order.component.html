@@ -1,0 +1,60 @@
+<ion-grid>
+
+  <ion-row>
+    <ion-col size="12">
+
+      <!-- No hay productos -->
+      <ng-container *ngIf="orderService.numProducts() == 0">
+        <ion-text>No hay productos</ion-text>
+      </ng-container>
+
+      
+      <!-- Hay productos -->
+      <ng-container *ngIf="orderService.numProducts() > 0"> 
+
+        <ion-item-sliding *ngFor="let product of orderService.order.productsOrder">
+
+          <!-- Nombre del producto -->
+          <ion-item (click)="showDetail(product)">
+            <ion-icon slot="end" name="caret-down-circle-outline"></ion-icon>
+            <ion-label>{{product.name}}</ion-label>
+          </ion-item>
+
+          <!-- Detalle -->
+          <ion-card *ngIf="product.showDetail">
+            <ion-card-content>
+              <!-- Controlador de la cantidad -->
+              <ion-item lines="none">
+                <ion-label>Cantidad</ion-label>
+                <ion-text class="product-quantity">
+                  <ion-icon name="remove-circle-outline" (click)="orderService.order.oneLessProduct(product)">
+                  </ion-icon>
+                  {{product.quantity}}
+                  <ion-icon name="add-circle-outline" (click)="orderService.order.oneMoreProduct(product)"></ion-icon>
+                </ion-text>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+
+          <!-- Eliminar producto -->
+          <ion-item-options side="end" *ngIf="!product.showDetail">
+            <ion-item-option color="danger" (click)="remove(product)">
+              <ion-icon slot="icon-only" name="trash"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+
+        </ion-item-sliding>
+
+      </ng-container>
+
+    </ion-col>
+  </ion-row>
+
+  <!-- Total orden -->
+  <ion-row>
+    <ion-col size="12" class="ion-text-center">
+      <ion-text>{{('Total pedido: ') + orderService.totalOrder() + ' €'}}</ion-text>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>

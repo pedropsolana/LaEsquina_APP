@@ -1,0 +1,46 @@
+<!-- Content -->
+<ion-content fullscreen>
+  <!-- Producto sin extras -->
+  <ng-container>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="product">
+            <div style="display: flex; align-items: center;justify-content: center;">
+              <img [src]="product.img" />
+            </div>
+            <ion-card-header>
+              <ion-card-title>{{('Precio: ') + product.price + ' €'}}
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <!-- Controlador de la cantidad -->
+              <ion-item lines="full" class="product-quantity">
+                <ion-icon name="basket-outline"></ion-icon>
+                <ion-label> &nbsp; Cantidad</ion-label>
+                <ion-text>
+                  <ion-icon name="remove-circle-outline" (click)="this.restaCantidad()">
+                  </ion-icon>
+                  {{cantidad}}
+                  <ion-icon name="add-circle-outline" (click)="this.sumaCantidad()"></ion-icon>
+                </ion-text>
+              </ion-item>
+              
+            </ion-card-content>
+          </ion-card>
+
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+
+  </ng-container>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addProductOrder()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

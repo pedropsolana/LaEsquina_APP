@@ -1,0 +1,7 @@
+{
+  "name": "La_Esquina",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

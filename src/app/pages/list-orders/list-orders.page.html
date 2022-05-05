@@ -1,0 +1,44 @@
+<!-- Content -->
+<ion-content class="ion-padding" fullscreen>
+
+  <!-- Sino esta logueado -->
+  <ng-container *ngIf="!authService.isLogged">
+    <!-- Login -->
+    <app-login *ngIf="!showNewAccount" [showBack]="false" (newAccount)="newAccount()">
+    </app-login>
+    <!-- Crear cuenta -->
+    <app-create-account *ngIf="showNewAccount" (back)="back()">
+    </app-create-account>
+  </ng-container>
+
+  <!-- Si estoy logueado -->
+  <ng-container *ngIf="authService.isLogged">
+
+    <!-- Listar pedidos -->
+
+    <ion-list inset="true">
+    <ion-list-header>PEDIDOS</ion-list-header>
+    <ion-item><ion-item>Fecha y Hora</ion-item><ion-item>Total</ion-item></ion-item>
+    <ion-accordion-group  *ngFor="let o of pedidos">
+      <ion-accordion value="Pedidos">
+        <ion-item slot="header">
+          <ion-label>{{ o.date }}&nbsp;{{ o.time }}&nbsp;&nbsp;{{ o.priceOrder }}&nbsp;€</ion-label>
+        </ion-item>
+
+        <ion-list slot="content">
+          <ion-item *ngFor="let p of o.products">
+            <ion-label>&nbsp;{{p.quantity}} &nbsp; {{p.name}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-accordion>
+    </ion-accordion-group>
+    </ion-list>
+
+  </ng-container>
+
+  <!-- Volvemos a las categorias -->
+  <ion-button type="button" expand="block" [routerLink]="['/categories']">
+    <ion-text>VOLVER</ion-text>
+  </ion-button>
+
+</ion-content>

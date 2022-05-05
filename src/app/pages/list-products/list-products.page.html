@@ -1,0 +1,23 @@
+<!-- Content -->
+<ion-content fullscreen>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let p of products" size="6">
+
+        <!-- Card -->
+        <ion-card class="list" (click)="goToProduct(p)">
+          <!-- Imagen -->
+          <img [src]="p.img" />
+          <ion-card-header>
+            <!-- Nombre -->
+            <ion-card-title>{{p.name}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

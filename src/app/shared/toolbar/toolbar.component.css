@@ -1,0 +1,30 @@
+.logo {
+    height: 40px;   
+}
+
+@font-face {
+    font-family: 'permanent';
+    src: url('/assets/fonts/PermanentMarker-Regular.ttf');
+  }
+
+  .titulo{
+    font-family: permanent;
+    font-size: x-large;
+    text-align: center;
+}
+.back-button{
+    font-size: 26px;
+    padding-left: 10px;
+    min-width: 36px;
+}
+ion-badge {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    }
+
+.ppal{
+    position: absolute;
+    top: 5px;
+    left: 55px;
+}

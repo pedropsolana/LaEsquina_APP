@@ -1,0 +1,49 @@
+<form (ngSubmit)="login()">
+
+  <ion-grid>
+
+    <ion-row>
+      <!-- Email -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Email:</ion-label>
+          <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <!-- Password -->
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Contraseña:</ion-label>
+          <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <!-- Login -->
+      <ion-col size="12">
+        <ion-button expand="block" type="submit">LOGIN</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="showBack">
+      <!-- Volver atras -->
+      <ion-col size="12">
+        <ion-button expand="block" type="button" (click)="exit()">VOLVER</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <!-- Nueva cuenta -->
+      <ion-col size="12">
+        <a (click)="showNewAccount()">¿No tienes cuenta? Create una aquí</a>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</form>
