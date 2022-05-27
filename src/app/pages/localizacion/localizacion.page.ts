@@ -47,15 +47,15 @@ export class LocalizacionPage implements OnInit {
     });
 
     // Crear Ventana Info
-    const contentString = 
-      "<div><b>Café Bar La Esquina</b></div>" +
-      "<div>C/ Constitución, 1</div>"+
-      "<div>06209 Solana de los Barros (Badajoz)</div>"+
-      "<div>Telf: 555555555</div>";
-    const infowindow = new google.maps.InfoWindow({
-      content: contentString,
-      maxWidth: 200,
-    });
+    // const contentString = 
+    //   "<div><b>Café Bar La Esquina</b></div>" +
+    //   "<div>C/ Constitución, 1</div>"+
+    //   "<div>06209 Solana de los Barros (Badajoz)</div>"+
+    //   "<div>Telf: 555555555</div>";
+    // const infowindow = new google.maps.InfoWindow({
+    //   content: contentString,
+    //   maxWidth: 200,
+    // });
   
     // Crear Marcador
     const marker = new google.maps.Marker({
@@ -66,7 +66,7 @@ export class LocalizacionPage implements OnInit {
 
      google.maps.event.addListenerOnce(this.map, 'idle', () => {
        mapEle.classList.add('show-map');
-       infowindow.open({anchor: marker, map: this.map, shouldFocus: false, });
+       //infowindow.open({anchor: marker, map: this.map, shouldFocus: false, });
      });
    }
 }

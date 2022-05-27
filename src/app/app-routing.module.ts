@@ -39,7 +39,15 @@ const routes: Routes = [
     path: 'localizacion',
     loadChildren: () => import('./pages/localizacion/localizacion.module').then( m => m.LocalizacionPageModule)
   },
- 
+  {
+    path: 'datos-clientes',
+    loadChildren: () => import('./pages/datos-clientes/datos-clientes.module').then( m => m.DatosClientesPageModule)
+  },
+  {
+    path: 'info-app',
+    loadChildren: () => import('./pages/info-app/info-app.module').then( m => m.InfoAppPageModule)
+  },
+   
 ];
 
 @NgModule({

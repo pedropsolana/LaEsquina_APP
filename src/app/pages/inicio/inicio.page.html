@@ -1,24 +1,28 @@
-<ion-card>
-  <img src="/assets/foto.jpg" />
-</ion-card>
-<ion-content>
-  <section class="botones">
-    <ion-button routerLink="/categories" class="letra" strong="true" shape="round" expand="block">HAZ TU PEDIDO
-    </ion-button>
-    <ion-button class="letra" strong="true" shape="round" expand="block" routerDirection="/categories/categories.page">
-      REGISTRATE</ion-button>
-  </section>
-  <ion-button routerLink="/localizacion" class="letra" strong="true" shape="round" expand="block">LOCALIZACION
-  </ion-button>
-</ion-content>
 <ion-content>
 <swiper [config]="config" 
 (swiper)="onSwiper($event)"
 (slideChange)="onSlideChange()">
-  <ng-template swiperSlide *ngFor="let img of ['cafe', 'cheese','coca-cola','lettuce','onion','tomato']">
+  <ng-template swiperSlide *ngFor="let img of ['foto1', 'foto2','foto3','foto4','foto5', 'foto6', 'foto7']">
     <ion-card>
-    <img src="/assets/img/products/{{ img }}.png" tappable (click)="openPreview(img)"/>
+    <img src="/assets/fotosSlide/{{ img }}.jpeg" tappable (click)="openPreview(img)"/>
   </ion-card>
 </ng-template>
 </swiper>
 </ion-content>
+<!-- <ion-card>
+  <img src="/assets/foto.jpg" />
+</ion-card> -->
+
+<div class="titulo"> COMIDA PARA LLEVAR</div>
+
+<ion-card routerLink="/categories" button="true">
+  <img src="/assets/pedido.png" />
+</ion-card>
+<ion-card routerLink="/localizacion" button="true">
+  <img src="/assets/ubicacion.png" />
+  <ion-card-content>
+    <div class="horario"><ion-icon name="time"></ion-icon>&nbsp; HORARIO DE APERTURA</div>
+    <div style="text-align: center;"> DE MARTES A DOMINGO DE 9:00 a 0:00</div>
+  </ion-card-content>
+</ion-card>
+

@@ -9,7 +9,7 @@
     <!-- Crear cuenta -->
     <app-create-account *ngIf="showNewAccount" (back)="back()">
     </app-create-account>
-  </ng-container>
+  </ng-container> 
 
   <!-- Si estoy logueado -->
   <ng-container *ngIf="authService.isLogged">
@@ -17,7 +17,7 @@
     <!-- Listar pedidos -->
 
     <ion-list inset="true">
-    <ion-list-header>PEDIDOS</ion-list-header>
+    <ion-list-header>PEDIDOS DE {{ nombreyapellidos | uppercase }}</ion-list-header>
     <ion-item><ion-item>Fecha y Hora</ion-item><ion-item>Total</ion-item></ion-item>
     <ion-accordion-group  *ngFor="let o of pedidos">
       <ion-accordion value="Pedidos">

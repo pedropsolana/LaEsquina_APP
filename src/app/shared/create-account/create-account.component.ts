@@ -23,7 +23,7 @@ export class CreateAccountComponent implements OnInit {
   ) {
     this.user = new User({});
     this.back = new EventEmitter<boolean>();
-    this.doCreateAccount = new EventEmitter<boolean>();
+    this.doCreateAccount = new EventEmitter<boolean>(); 
   }
 
   ngOnInit() {

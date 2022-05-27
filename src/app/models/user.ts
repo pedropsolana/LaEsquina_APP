@@ -6,6 +6,8 @@ export class User implements IUser {
     constructor(data) {
         set(this, 'data', data);
     }
+    key: string;
+    $key: string;
 
     getData(){
         return get(this, 'data');

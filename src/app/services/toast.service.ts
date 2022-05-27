@@ -19,7 +19,7 @@ export class ToastService {
     const toast = await this.toastController.create({
       message,
       duration,
-      position: 'middle',
+      position: 'bottom',
       color: 'success'
     });
     toast.present();

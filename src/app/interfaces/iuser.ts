@@ -1,4 +1,5 @@
 export interface IUser {
+    $key: string;
     email: string;
     password: string;
     name: string;
@@ -6,4 +7,5 @@ export interface IUser {
     address: string;
     poblacion: string;
     telf: string;
+    key: string;
 }

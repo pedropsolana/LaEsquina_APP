@@ -131,4 +131,28 @@ export class ToolbarComponent implements OnInit {
     this.navCtrl.navigateForward('list-orders')
   }
 
+  datosCliente(){
+
+    this.back(); 
+
+    // reseteamos el detalle
+    //this.orderService.order.productsOrder.forEach(p => p.showDetail = false);
+
+    // Cerramos el menu
+    this.menuController.close('content');
+    this.navCtrl.navigateForward('datos-clientes')
+  }
+
+  infoApp(){
+
+    this.back(); 
+
+    // reseteamos el detalle
+    //this.orderService.order.productsOrder.forEach(p => p.showDetail = false);
+
+    // Cerramos el menu
+    this.menuController.close('content');
+    this.navCtrl.navigateForward('info-app')
+  }
+
 }

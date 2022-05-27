@@ -1,0 +1,87 @@
+<ion-content class="ion-padding" fullscreen>
+  <ng-container *ngIf="authService.isLogged">
+    <!-- Formulario -->
+    <form [formGroup]="cliente" (ngSubmit)="modificaDatos()">
+      <ion-grid>
+        <ion-row>
+          <!-- Email -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Email:</ion-label>
+              <ion-input formControlName="email" readonly></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Nombre -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Nombre:</ion-label>
+              <ion-input formControlName="name"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Apellidos -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Apellidos:</ion-label>
+              <ion-input formControlName="apellidos"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <!-- Teléfono -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Teléfono:</ion-label>
+              <ion-input formControlName="telf"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Dirección -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Dirección:</ion-label>
+              <ion-input formControlName="address" ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Población -->
+          <ion-col size="12">
+            <ion-item>
+              <ion-label>Población:</ion-label>
+              <ion-input formControlName="poblacion" ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <!-- Modificar cuenta -->
+          <ion-col size="12">
+            <ion-button expand="block" type="submit">Modificar Cuenta</ion-button>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <!-- Boton volver -->
+          <ion-col size="12">
+            <ion-button expand="block" type="button" [routerLink]="['/categories']">Volver</ion-button>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+ </form>
+   
+  </ng-container>
+</ion-content>

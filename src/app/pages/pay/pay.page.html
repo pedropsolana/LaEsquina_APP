@@ -4,13 +4,10 @@
   <!-- Sino esta logueado -->
   <ng-container *ngIf="!authService.isLogged">
     <!-- Login -->
-    <app-login *ngIf="!showNewAccount"
-      [showBack]="false"
-      (newAccount)="newAccount()">
+    <app-login *ngIf="!showNewAccount" [showBack]="false" (newAccount)="newAccount()">
     </app-login>
     <!-- Crear cuenta -->
-    <app-create-account *ngIf="showNewAccount"
-      (back)="back()">
+    <app-create-account *ngIf="showNewAccount" (back)="back()">
     </app-create-account>
   </ng-container>
 
@@ -22,14 +19,20 @@
 
     <!-- Boton para pagar y enviar -->
     <ion-button type="button" expand="block" (click)="payAndsend()" *ngIf="orderService.numProducts() > 0">
+      <ion-icon slot="start" name="logo-paypal"></ion-icon>
+      <ion-text>PAGAR ANTES DE RECOGER</ion-text>
+    </ion-button>
+
+    <!-- Boton para pagar y enviar -->
+    <ion-button type="button" expand="block" (click)="aceptarYenviar()" *ngIf="orderService.numProducts() > 0">
       <ion-icon slot="start" name="cart-outline"></ion-icon>
-      <ion-text>ENVIAR PEDIDO</ion-text>
+      <ion-text>ACEPTAR Y PAGAR AL RECOGER</ion-text>
     </ion-button>
 
   </ng-container>
 
   <!-- Volvemos a las categorias -->
-  <ion-button type="button" expand="block" [routerLink]="['/categories']" >
+  <ion-button type="button" expand="block" [routerLink]="['/categories']">
     <ion-text>VOLVER</ion-text>
   </ion-button>
 

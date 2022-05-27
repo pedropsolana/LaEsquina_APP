@@ -44,7 +44,7 @@ export class AuthService {
    */
   logout() {
     this.afAuth.signOut();
-    this._isLoggued = false;
+    this._isLoggued = false; 
   }
 
   /**

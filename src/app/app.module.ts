@@ -14,6 +14,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore'
 import { SwiperModule } from 'swiper/angular';
+import { PayPal } from '@ionic-native/paypal/ngx';
 
 
 
@@ -37,6 +38,7 @@ import { SwiperModule } from 'swiper/angular';
   registrationStrategy: 'registerWhenStable:30000'
 })],
   providers: [
+    PayPal,
     NavParams,
     NotificationsService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { NotificationsService } from '../../services/notifications.service';
-import SwiperCore, { SwiperOptions, Navigation, Pagination, Scrollbar, A11y, Swiper } from 'swiper';
+import SwiperCore, { SwiperOptions, Navigation, Pagination, Scrollbar, A11y, Swiper, Autoplay } from 'swiper';
 
 // install Swiper modules
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Autoplay, Navigation, Pagination, Scrollbar, A11y]);
 
 @Component({
   selector: 'app-inicio',
@@ -13,9 +13,13 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 })
 export class InicioPage implements OnInit {
   public config: SwiperOptions = {
-    slidesPerView: 2.5,
+    slidesPerView: 1,
     spaceBetween: 10,
     navigation: true,
+    autoplay:{
+      delay: 2500,
+      disableOnInteraction: false
+    },
     // centeredSlides: true,
     pagination: { clickable: true },
     };
@@ -30,6 +34,7 @@ export class InicioPage implements OnInit {
   openPreview(img){
     console.log(img);
   };
+
   constructor(
     private db: AngularFirestore,
     public notificaciones: NotificationsService
